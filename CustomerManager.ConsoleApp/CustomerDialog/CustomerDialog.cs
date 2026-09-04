@@ -18,13 +18,20 @@ public class CustomerDialog(ICustomerServices customerService) : ICustomerDialog
             Console.WriteLine($"Custtomer with id'{customer.Id}' was created.");
         else
             Console.WriteLine($"Unable to create new customer.");
-            
+
         Console.ReadKey();
     }
 
     public void ShowAllCustomersDialog()
     {
-        throw new NotImplementedException();
+        Console.Clear();
+        Console.WriteLine("### CUSTOMER List ###");
+
+        var customers = customerService.GetAllCustomers();
+
+        foreach (var customer in customers)
+            Console.WriteLine($"{customer.Name} <{customer.Email}>");
+
     }
     private static void InputDialog(string text, out string value)
     {
