@@ -4,6 +4,7 @@ namespace CustomerManager.ConsoleApp.Customers.Services;
 
 public class InMemoryCustomerService : ICustomerServices
 {
+    private readonly List<Customer> _customerList = [];
     public Customer AddCustomer(string name, string email)
     {
         throw new NotImplementedException();
